@@ -2,7 +2,7 @@
   "name": "backlog2jira",
   "private": true,
   "version": "0.0.0",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "description": "baclog と JIRA を連携する Chrome 拡張機能。",
   "scripts": {
     "start": "npm run dev:chrome",
     "build": "npm run build:chrome",
@@ -50,5 +50,8 @@
     "webpack": "1.x.x",
     "webpack-stream": "3.x.x",
     "yargs": "5.x.x"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
   }
 }
