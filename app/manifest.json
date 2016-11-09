@@ -4,7 +4,7 @@
   "description": "__MSG_appDescription__",
   "version": "0.0.0",
   "manifest_version": 2,
-  "default_locale": "en",
+  "default_locale": "ja",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
@@ -12,7 +12,8 @@
   "background": {
     "scripts": [
       "scripts/background.js"
-    ]
+      ],
+      "persistent": false
   },
   "page_action": {
     "default_icon": {
@@ -30,8 +31,8 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://*/backlog/view/*",
+        "https://*/backlog/view/*"
       ],
       "css": [
         "styles/contentscript.css"
@@ -44,14 +45,6 @@
     }
   ],
   "permissions": [
-    "clipboardRead",
-    "clipboardWrite",
-    "contentSettings",
-    "cookies",
-    "input",
-    "notifications",
-    "pageCapture",
-    "webRequest",
-    "webRequestBlocking"
+    "notifications"
   ]
 }
