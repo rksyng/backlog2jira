@@ -1,12 +1,37 @@
-import $ from 'jquery'
-
 //種別
-console.log($('#issuecard>.key>.issue-type-name')[0].innerText);
+let type = document.querySelector('#issuecard>.key>.issue-type-name').innerText;
+console.log(type);
 // キー
-console.log($('.key>strong')[0].innerText);
-// タイトル
-console.log($('#issuecard>.summary')[0].innerText);
-// 詳細
-console.log($('#issueDescription').html());
+let key = document.querySelector('.key>strong').innerText;
+console.log(key);
 
-$('.editMenu').prepend('<input type="button" class="Btn-orange" value="この課題を JIRA に登録" onclick="copyIssue(this.form);" style="float:left; padding:5px 0; width:160px;">');
+// タイトル
+let title = document.querySelector('#issuecard>.summary').innerText;
+console.log(title);
+
+// 詳細
+let description = document.querySelector('#issueDescription');
+console.log(description);
+
+let copyIssueButton = document.createElement('input');
+copyIssueButton.type = 'button';
+copyIssueButton.id = 'copyIssue';
+copyIssueButton.classList.add('Btn-orange');
+copyIssueButton.value = 'この課題を JIRA に登録';
+copyIssueButton.style.float = 'left';
+copyIssueButton.style.padding = '5px 0';
+copyIssueButton.style.width = '160px';
+document.querySelector('.editMenu').appendChild(copyIssueButton);
+
+copyIssueButton.addEventListener('click', function() {
+  chrome.runtime.sendMessage(
+    {
+      backlogIssue: {
+        key: key,
+        title: title
+      }
+    },
+    (response) => {
+      console.log(response);
+    });
+});

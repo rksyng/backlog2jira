@@ -45,6 +45,8 @@
     }
   ],
   "permissions": [
-    "notifications"
+    "notifications",
+    "activeTab",
+    "storage"
   ]
 }

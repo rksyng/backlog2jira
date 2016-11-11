@@ -51,7 +51,5 @@
     "webpack-stream": "3.x.x",
     "yargs": "5.x.x"
   },
-  "dependencies": {
-    "jquery": "^3.1.1"
-  }
+  "dependencies": {}
 }
