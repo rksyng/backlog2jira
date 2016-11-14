@@ -1,3 +1,5 @@
+import 'chromereload/devonly';
+
 //種別
 let type = document.querySelector('#issuecard>.key>.issue-type-name').innerText;
 console.log(type);

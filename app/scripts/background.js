@@ -1,4 +1,3 @@
-// Enable chromereload by uncommenting this line:
 import 'chromereload/devonly';
 
 chrome.runtime.onInstalled.addListener(function (details) {

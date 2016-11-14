@@ -23,6 +23,7 @@
     "babel-preset-stage-0": "6.x.x",
     "chai": "3.x.x",
     "chromereload": "0.x.x",
+    "css-loader": "^0.25.0",
     "debounce": "1.x.x",
     "del": "2.x.x",
     "eslint": "3.x.x",
@@ -46,10 +47,13 @@
     "gulp-util": "3.x.x",
     "gulp-zip": "3.x.x",
     "require-dir": "0.x.x",
+    "style-loader": "^0.13.1",
     "vinyl-named": "1.x.x",
     "webpack": "1.x.x",
     "webpack-stream": "3.x.x",
     "yargs": "5.x.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "material-design-lite": "^1.2.1"
+  }
 }

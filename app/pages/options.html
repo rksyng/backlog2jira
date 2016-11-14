@@ -6,12 +6,22 @@
   <link rel="stylesheet" type="text/css" href="../styles/options.css">
 </head>
 <body>
-
-  <label>
-    <input type="checkbox" name="examplOption" checked>
-    Example Option
-  </label>
-
-  <script src="../scripts/options.js"></script>
+<h2>JIRA Language Switcher Settings</h2>
+<section class="jira-lang-switcher-settings-section">
+  <h3>Add New JIRA Site</h3>
+  <span>
+<span>Base URL :</span>
+<input id="jira-lang-switcher-settings-baseurl-textbox" type="text" name="baseurl-textbox" value=""
+       placeholder="https://jira.example.com" style="width:10%">
+<button id="jira-lang-switcher-settings-add-baseurl-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add</button>
+<span id="jira-lang-switcher-settings-error-message"></span>
+</span>
+</section>
+<section class="jira-lang-switcher-settings-section">
+  <h3>Registered JIRA Site</h3>
+  <table id="jira-lang-switcher-settings-baseurl-table"></table>
+  </table>
+</section>
+<script src="../scripts/options.js"></script>
 </body>
 </html>

@@ -41,6 +41,10 @@ gulp.task('scripts', (cb) => {
         loaders: [{
           test: /\.js$/,
           loader: 'babel'
+        },
+        {
+          test: /\.css$/,
+          loader: 'style!css'
         }]
       },
       eslint: {
