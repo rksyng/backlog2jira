@@ -39,7 +39,7 @@ gulp.task('scripts', (cb) => {
           exclude: /node_modules/
         }],
         loaders: [{
-          test: /\.js$/,
+          test: /\.jsx?$/,
           loader: 'babel'
         },
         {

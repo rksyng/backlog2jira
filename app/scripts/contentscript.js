@@ -1,4 +1,6 @@
 import 'chromereload/devonly';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 //種別
 let type = document.querySelector('#issuecard>.key>.issue-type-name').innerText;
@@ -15,25 +17,34 @@ console.log(title);
 let description = document.querySelector('#issueDescription');
 console.log(description);
 
-let copyIssueButton = document.createElement('input');
-copyIssueButton.type = 'button';
-copyIssueButton.id = 'copyIssue';
-copyIssueButton.classList.add('Btn-orange');
-copyIssueButton.value = 'この課題を JIRA に登録';
-copyIssueButton.style.float = 'left';
-copyIssueButton.style.padding = '5px 0';
-copyIssueButton.style.width = '160px';
-document.querySelector('.editMenu').appendChild(copyIssueButton);
+class JIRAButton extends React.Component {
 
-copyIssueButton.addEventListener('click', function() {
-  chrome.runtime.sendMessage(
-    {
-      backlogIssue: {
-        key: key,
-        title: title
-      }
-    },
-    (response) => {
-      console.log(response);
-    });
-});
+  constructor(props, state) {
+    super(props, state);
+  }
+
+  sendToJira() {
+    chrome.runtime.sendMessage(
+      {
+        backlogIssue: {
+          key: key,
+          title: title
+        }
+      },
+      (response) => {
+        console.log(response);
+      });
+  }
+
+  render() {
+    return <input type="button"
+                  onClick={this.sendToJira}
+                  className="Btn-orange"
+                  style={{float: "left", padding: "3px 0", width: "160px"}}
+                  value="この課題を JIRA に登録"/>;
+  }
+}
+
+const editMenuChild = document.createElement('span');
+document.querySelector('.editMenu').appendChild(editMenuChild);
+ReactDOM.render(React.createElement(JIRAButton), editMenuChild);
