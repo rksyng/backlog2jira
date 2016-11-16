@@ -14,5 +14,9 @@
   "browserActionTitle": {
     "message": "backlog2jira",
     "description": "The title of the browser action button"
+  },
+  "createJIRAIssue": {
+    "message": "Create JIRA Issue",
+    "description": "Create JIRA Issue"
   }
 }

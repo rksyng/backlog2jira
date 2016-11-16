@@ -13,9 +13,9 @@ console.log(key);
 let title = document.querySelector('#issuecard>.summary').innerText;
 console.log(title);
 
-// 詳細
-let description = document.querySelector('#issueDescription');
-console.log(description);
+// URL
+let backlogIssueURL = location.href.replace(location.hash, "");
+console.log(backlogIssueURL);
 
 class JIRAButton extends React.Component {
 
@@ -37,11 +37,11 @@ class JIRAButton extends React.Component {
   }
 
   render() {
-    return <input type="button"
-                  onClick={this.sendToJira}
-                  className="Btn-orange"
-                  style={{float: "left", padding: "3px 0", width: "160px"}}
-                  value="この課題を JIRA に登録"/>;
+    return <input type = "button"
+                  onClick = {this.sendToJira}
+                  className = "Btn-orange"
+                  style = {{float: "left", padding: "3px 0", width: "160px"}}
+                  value = {chrome.i18n.getMessage('createJIRAIssue')} />;
   }
 }
 
