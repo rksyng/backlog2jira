@@ -1,7 +1,7 @@
 import 'chromereload/devonly';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BacklogButton from './backlog/backlog';
+import BacklogButton from './component/BacklogButton';
 
 let backlogIssue = {
   type : document.querySelector('#issuecard>.key>.issue-type-name').innerText,
@@ -11,7 +11,7 @@ let backlogIssue = {
 };
 
 const editMenuChild = document.createElement('span');
-const backlogButton = <BacklogButton baclogIssue={backlogIssue} />;
+const backlogButton = <BacklogButton backlogIssue={backlogIssue} />;
 
 document.querySelector('.editMenu').appendChild(editMenuChild);
 ReactDOM.render(backlogButton, editMenuChild);
