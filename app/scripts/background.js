@@ -12,5 +12,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   console.log(request);
   console.log(sender);
   console.log(sendResponse);
-  return sendResponse(request.backlogIssue.key);
+  return sendResponse(request.backlogIssue);
 });
